@@ -1,5 +1,6 @@
 import pygame
 import sys
+import view 
 
 class Controller():
     def __init__(self):
@@ -12,3 +13,4 @@ class Controller():
                 # Если пользователь закрыл окно, завершаем Pygame и выходим из программы
                 pygame.quit()
                 sys.exit()
+        

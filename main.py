@@ -11,8 +11,8 @@ async def main():
     
     
     while True:
-        controllers.event()
         game.screen.fill(game.background)
+        controllers.event()
         
         start_menu.menu_draw(game.width, game.height)
         
