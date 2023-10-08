@@ -10,6 +10,7 @@ class Menu():
         self.size_font = 80             # Размер шрифта
         self.font = pygame.font.Font(None, self.size_font)
         self.text_menu = ["Новая игра", "Продолжить", "Настройки", "Выход"]  # Элементы меню
+        self.item_rect = None
         
     def menu_draw(self, width, height):
         # Отрисовка меню
@@ -23,6 +24,6 @@ class Menu():
         height_text = height // 3
         for item in self.text_menu:
             item_text = self.font.render(item, True, self.color)
-            item_rect = item_text.get_rect(center=(width // 2, height_text))
-            self.screen.blit(item_text, item_rect)
+            self.item_rect = item_text.get_rect(center=(width // 2, height_text))
+            self.screen.blit(item_text, self.item_rect)
             height_text += 100  # Увеличиваем вертикальное смещение для следующего элемента
