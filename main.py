@@ -6,17 +6,13 @@ from controller import controller
 async def main():
     # Создаем экземпляр класса View
     game = view.View()
-    controllers = controller.Controller()
     start_menu = menu.Menu(game.screen)
-    
-    
+    controllers = controller.Controller(start_menu)
+      
     while True:
+        controllers.event()
         game.screen.fill(game.background)
-        controllers.event(start_menu)
-        
         start_menu.menu_draw(game.width, game.height)
-        
-        
         
         
         

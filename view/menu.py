@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 class Menu():
     
@@ -10,8 +11,8 @@ class Menu():
         self.size_font = 80             # Размер шрифта
         self.font = pygame.font.Font(None, self.size_font)
         self.text_menu = ["Новая игра", "Продолжить", "Настройки", "Выход"]  # Элементы меню
-        self.item_rect = None
-        
+        self.item_rects = []  # Список для хранения прямоугольников элементов меню
+    
     def menu_draw(self, width, height):
         # Отрисовка меню
         
@@ -23,7 +24,8 @@ class Menu():
         # Отрисовка элементов меню
         height_text = height // 3
         for item in self.text_menu:
-            item_text = self.font.render(item, True, self.color)
-            self.item_rect = item_text.get_rect(center=(width // 2, height_text))
-            self.screen.blit(item_text, self.item_rect)
+            item_text = self.font.render(item, True, self.color, self.background)
+            item_rect = item_text.get_rect(center=(width // 2, height_text))
+            self.item_rects.append(item_rect)  # Добавляем прямоугольник в список
+            self.screen.blit(item_text, item_rect)
             height_text += 100  # Увеличиваем вертикальное смещение для следующего элемента
