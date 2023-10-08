@@ -19,9 +19,4 @@ class View():
         # Задаем заголовок окна
         pygame.display.set_caption("Fire to Kill")
         
-    def update(self):
-        # Заполняем экран цветом фона
-        self.screen.fill(self.background)
         
-        # Отображаем изменения на экране
-        pygame.display.flip()
