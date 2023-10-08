@@ -3,13 +3,25 @@ import pygame
 class View():
     
     def __init__(self):
-        self.initialization = pygame.init
-        self.background = (0, 0 , 0)
+        # Инициализация Pygame
+        pygame.init()
+        
+        # Задаем цвет фона (черный)
+        self.background = (0, 0, 0)
+        
+        # Задаем размер экрана
         self.width = 1200
         self.height = 800
+        
+        # Создаем окно Pygame
         self.screen = pygame.display.set_mode((self.width, self.height))
-        self.name = pygame.display.set_caption("Fire to Kill")
+        
+        # Задаем заголовок окна
+        pygame.display.set_caption("Fire to Kill")
         
     def update(self):
+        # Заполняем экран цветом фона
         self.screen.fill(self.background)
-        self.flip = pygame.display.flip()
+        
+        # Отображаем изменения на экране
+        pygame.display.flip()
